@@ -8,7 +8,7 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tunnel" : "ngrok http 3000"
+    "tunnel": "ngrok http 3000"
   },
   "author": "",
   "license": "ISC",
@@ -26,5 +26,8 @@
     "morgan": "^1.10.0",
     "validator": "^13.1.17",
     "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

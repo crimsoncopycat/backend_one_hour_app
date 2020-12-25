@@ -5,9 +5,7 @@ const bookTitle = new mongoose.Schema(
     book_title: {
       type: String,
     },
-      createdAt: {
-      type: { type: Date, default: Date.now },
-    },
+      createdAt: { type: Date, default: Date.now },
   },
   { collection: "book_titles" }
 );

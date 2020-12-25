@@ -8,7 +8,7 @@ const bookTime = new mongoose.Schema(
     time: {
       type: Number,
     },
-    date: { type: Date, default: Date.now },
+    createdAt: { type: Date, default: Date.now },
   },
   { collection: "books" }
 );
