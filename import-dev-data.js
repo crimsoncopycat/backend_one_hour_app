@@ -33,7 +33,7 @@ const importData = async () => {
     await Tour.create(tours);
     console.log("Data succesfully loaded");
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 };
 

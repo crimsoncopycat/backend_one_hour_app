@@ -37,7 +37,7 @@ exports.updateOne = (Model) =>
 
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
-      console.log(req.body);
+      // console.log(req.body);
     const doc = await Model.create(req.body);
     res.status(201).json({
       status: "success",
@@ -77,7 +77,7 @@ exports.getLastEntry = (Model) =>
         if (!doc) {
             return next(new AppError(`No document  found with that id`, 404));
         }
-        console.log(doc);
+        // console.log(doc);
         res.status(200).json({
             status: "success",
             // results: tours.length,
@@ -102,7 +102,7 @@ exports.getAll = (Model) =>
 
     //EXECUTE QUERY
     // const docs = await features.query.explain();
-      console.log(features.query);
+    //   console.log(features.query);
     const docs = await features.query;
     res.status(200).json({
       status: "success",

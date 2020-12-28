@@ -10,6 +10,8 @@ router.route('/')
 router.route('/last-inserted').get(booksTimesController.getLastInserted);
 router.route('/books').get(booksTimesController.getLastInserted);
 
-router.route('/:id').patch(booksTimesController.updateBooking);
+router.route('/:id')
+    .get(booksTimesController.getTime)
+    .patch(booksTimesController.updateBooking);
 
 module.exports = router;
