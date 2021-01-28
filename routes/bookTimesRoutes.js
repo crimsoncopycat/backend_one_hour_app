@@ -9,6 +9,7 @@ router.route('/')
 
 router.route('/last-inserted').get(booksTimesController.getLastInserted);
 router.route('/books').get(booksTimesController.getLastInserted);
+router.route('/export').get(booksTimesController.exportData);
 
 router.route('/:id')
     .get(booksTimesController.getTime)

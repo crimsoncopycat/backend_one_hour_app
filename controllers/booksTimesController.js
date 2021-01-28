@@ -7,3 +7,4 @@ exports.createNewTime = factory.createOne(BookTime);
 exports.updateBooking = factory.updateOne(BookTime);
 exports.getLastInserted = factory.getLastEntry(BookTime);
 exports.getTime = factory.getOne(BookTime);
+exports.exportData = factory.exportData(BookTime);

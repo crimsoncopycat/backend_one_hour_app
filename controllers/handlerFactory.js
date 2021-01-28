@@ -112,3 +112,40 @@ exports.getAll = (Model) =>
       },
     });
   });
+
+
+
+//UTILITY TO DOWNLOAD CSV FILE
+const downloadResource = (res, fileName, fields, data) => {
+    const { Parser } = require('json2csv');
+    const json2csv = new Parser({ fields });
+    const csv = json2csv.parse(data);
+    res.header('Content-Type', 'text/csv');
+    res.attachment(fileName);
+    return res.send(csv);
+}
+
+exports.exportData = (Model) => catchAsync(async (req, res, next) => {
+    let filter = {};
+    if (req.params.tourId) {
+        filter = { tour: req.params.tourId };
+    }
+
+    const features = new ApiFeatures(Model.find(filter), req.query)
+        .filter()
+        .sort()
+        .limitingFields()
+        .paginate();
+
+    const docs = await features.query;
+    const fields = ['title', 'time', 'createdAt'];
+
+    return downloadResource(res, 'times.csv', fields, docs);
+    // res.status(200).json({
+    //     status: "success",
+    //     results: docs.length,
+    //     data: {
+    //         data: docs,
+    //     },
+    // });
+});
