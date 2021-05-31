@@ -1,9 +1,8 @@
 #nodejs+express+mongodb starter REST
 
+ExpoSDK :: https://docs.expo.io/versions/v39.0.0/sdk
+
 Build with node.js express and mongo
-
-
-
 To start create file config.env with this data:
 
 NODE_ENV=development

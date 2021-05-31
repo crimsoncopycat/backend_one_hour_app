@@ -7,6 +7,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xssClean = require("xss-clean");
 const hpp = require("hpp");
 const compression = require("compression");
+// const cors = require('cors');
 
 /**
  * Error handling
@@ -24,7 +25,7 @@ const bookTimes = require("./routes/bookTimesRoutes");
 const bookTitles = require("./routes/bookTitleRoutes");
 
 const app = express();
-
+// app.use(cors());
 //Serving static files
 // app.use(express.static(`${__dirname}/public`));
 app.use(express.static(path.join(__dirname, "public")));

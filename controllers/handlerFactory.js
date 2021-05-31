@@ -134,8 +134,7 @@ exports.exportData = (Model) => catchAsync(async (req, res, next) => {
     const features = new ApiFeatures(Model.find(filter), req.query)
         .filter()
         .sort()
-        .limitingFields()
-        .paginate();
+        .limitingFields();
 
     const docs = await features.query;
     const fields = ['title', 'time', 'createdAt'];
